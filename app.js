@@ -21,12 +21,12 @@ async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 
   const coordinates = await getLugarLatLng(direccion, apiKeyGoogle);
   const climInfo = await getClima(direccion, apiKeyOpenWeat, coordinates.lat, coordinates.lng);
-  
+
   if (coordinates.err) {
     log(coordinates.err);
     return;
   }
-  
+
   if (climInfo.err) {
     log(climInfo.err);
     return;

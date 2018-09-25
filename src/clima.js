@@ -10,16 +10,16 @@ module.exports = async function getClima(direccion, apiKey, lat, lng) {
     const resp = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`)
     const data = resp.data.main;
     return {
-        err: null,
-        temp: data.temp,
-        pressure: data.pressure,
-        humidity: data.humidity
+      err: null,
+      temp: data.temp,
+      pressure: data.pressure,
+      humidity: data.humidity
     };
   } catch (error) {
-      // Menejo el error y envio un mensaje personalizado.
-      log(null, error);
-      return {
-        err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`,
-      };
+    // Menejo el error y envio un mensaje personalizado.
+    log(null, error);
+    return {
+      err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`,
+    };
   }
 }
