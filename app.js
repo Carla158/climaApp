@@ -4,7 +4,7 @@ const getClima = require('./src/clima');
 const log = require('./src/log');
 
 const argv  = yargs
-  .usage('Usage: $0 <command> [options]')
+  .usage('Uso: $0 <comando> [opción]')
   .command('d', 'Nombre de la localidad y provicia')
   .example('node $0 -d "concordia entre rios"')
   .alias('d', 'direccion')
