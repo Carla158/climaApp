@@ -20,7 +20,7 @@ async function getInfo(direccion) {
     const climInfo = await getClima(direccion, coordinates.lat, coordinates.lng);
     log(` \n El Clima en ${coordinates.direccion}.\n Temperatura: ${climInfo.temp}°C\n Presion: ${climInfo.pressure}\n Humedad: ${climInfo.humidity}`);
   } catch (err) {
-    return log(null, err);
+    return log(err.message);
   }
 }
 

@@ -1,4 +1,5 @@
 const axios = require('axios');
+const log = require('./log');
 
 /**
  * Obtengo las coordenadas de la ubicación que ingreso el usuario.
@@ -16,6 +17,7 @@ module.exports = async function getLugarLatLng(direccion) {
         };
     } catch (err) {
         // Menejo el error y envio un mensaje personalizado.
+        log(null, err);
         throw Error(`Ocurrieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}.`);
     }
 }

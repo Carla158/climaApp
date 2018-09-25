@@ -3,7 +3,7 @@
  */
 module.exports = function log(message, err) {
   if (err) {
-    console.log(err.message);
+    // console.log(err);
     return;
   }
   console.log(message);
