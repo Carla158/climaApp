@@ -20,5 +20,5 @@ async function getInfo (direccion) {
 }
 
 getInfo(argv.direccion)
-.then((m)=> console.log('⛅' + m))
+.then((m)=> console.log(m))
 .catch((e)=> console.log(e.message));
