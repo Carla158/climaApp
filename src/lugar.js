@@ -16,11 +16,9 @@ async function getLugarLatLng(direccion) {
             lng: coors.lng
         };
     } catch (err) {
-        // Menejo el error y envio un mensaje personalizado
+        // Menejo el error y envio un mensaje personalizado.
         throw Error(`Hubieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}`);
     }
 }
 
-module.exports = {
-    getLugarLatLng
-};
+module.exports = getLugarLatLng;

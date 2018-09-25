@@ -19,6 +19,4 @@ async function getClima(direccion, lat, lng) {
   }
 }
 
-module.exports = {
-  getClima
-};
+module.exports = getClima;
