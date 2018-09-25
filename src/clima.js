@@ -20,6 +20,6 @@ module.exports = async function getClima(direccion, apiKey, lat, lng) {
       log(null, error);
       return {
         err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`,
-      }
+      };
   }
 }

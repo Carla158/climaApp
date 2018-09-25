@@ -21,6 +21,6 @@ module.exports = async function getLugarLatLng(direccion, apiKey) {
         log(null, error);
         return {
             err: `Ocurrieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}.`
-        }
+        };
     }
 }
