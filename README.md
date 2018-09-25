@@ -5,7 +5,7 @@ Ejemplo:
 node app.js -d "concordia entre rios"
 
 Salida:
-El Clima en Concordia, Entre Rios, Argentina
- Temperatura: 18.98 °C
- Presion: 1021.22
- Humedad: 74
+ <br>El Clima en Concordia, Entre Rios, Argentina
+ <br>Temperatura: 18.98 °C
+ <br>Presion: 1021.22
+ <br>Humedad: 74
