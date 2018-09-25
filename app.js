@@ -1,12 +1,14 @@
+const yargs = require('yargs');
 const getLugarLatLng = require('./src/lugar');
 const getClima = require('./src/clima');
 const log = require('./src/log');
-const argv = require('yargs')
-    .usage('Usage: $0 <command> [options]')
-    .command('d', 'Nombre de la localidad y provicia')
-    .alias('d', 'direccion')
-    .example('node $0 -d "concordia entre rios"')
-    .demandOption(['d']).argv;
+
+const argv  = yargs
+  .usage('Usage: $0 <command> [options]')
+  .command('d', 'Nombre de la localidad y provicia')
+  .example('node $0 -d "concordia entre rios"')
+  .alias('d', 'direccion')
+  .demandOption('d').argv;
 
 const API_KEY_GOOGLE_MAP = 'AIzaSyAJ2aEs0UpGAW-G4mleFU6nasD6U1RkfT0';
 const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
