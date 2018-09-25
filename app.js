@@ -8,8 +8,6 @@ const argv = require('yargs').options({
   }
 }).argv;
 
-// ⛅ Aplicación para obtener los datos del clima.
-
 /**
  * Invoco a los servicios para obtener los datos del clima
  */
