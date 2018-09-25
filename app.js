@@ -11,7 +11,7 @@ const argv = require('yargs').options({
 }).argv;
 
 /**
- * Envio las consultas a cada servicio, para finalmente obtener los datos del clima.
+ * Envio las consultas a cada servicio, para obtener los datos del clima.
  * Para finalmente, mostrarlos de forma ordenada por pantalla.
  */
 async function getInfo(direccion) {
