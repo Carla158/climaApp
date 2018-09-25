@@ -1,5 +1,7 @@
 const getLugarLatLng = require('./src/lugar');
 const getClima = require('./src/clima');
+const log = require('./src/log');
+
 const argv = require('yargs').options({
   direccion: {
     alias: 'd',
@@ -8,16 +10,6 @@ const argv = require('yargs').options({
   }
 }).argv;
 
-/**
- * Manejo los errores.
- */
-function log(message, err) {
-  if (err) {
-    console.log(err.message);
-    return;
-  }
-  console.log(message);
-}
 
 /**
  * Invoco a los servicios para obtener los datos del clima.
