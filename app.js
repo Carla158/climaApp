@@ -10,7 +10,6 @@ const argv = require('yargs').options({
   }
 }).argv;
 
-
 /**
  * Invoco a los servicios para obtener los datos del clima.
  */
