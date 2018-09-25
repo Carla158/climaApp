@@ -14,7 +14,7 @@ const argv = require('yargs').options({
 async function getInfo (direccion) {
     const coordinates = await lugar.getLugarLatLng(direccion);
     const climInfo = await clima.getClima(direccion, coordinates.lat, coordinates.lng);
-    return ` \n El Clima en ${coordinates.direccion}\n Temperatura: ${climInfo.temp} °C\n Presion: ${climInfo.pressure}\n Humedad: ${climInfo.humidity}`;
+    return ` \n El Clima en ${coordinates.direccion}.\n Temperatura: ${climInfo.temp} °C\n Presion: ${climInfo.pressure}\n Humedad: ${climInfo.humidity}`;
 }
 
 getInfo(argv.direccion)
