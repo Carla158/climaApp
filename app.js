@@ -1,7 +1,6 @@
 const getLugarLatLng = require('./src/lugar');
 const getClima = require('./src/clima');
 const log = require('./src/log');
-
 const argv = require('yargs')
 .usage('Usage: $0 <command> [options]')
 .command('d', 'Nombre de la localidad y provicia')
