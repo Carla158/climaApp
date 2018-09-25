@@ -17,7 +17,7 @@ async function getLugarLatLng(direccion) {
         };
     } catch (err) {
         // Menejo el error y envio un mensaje personalizado.
-        throw Error(`Hubieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}`);
+        throw Error(`Ocurrieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}.`);
     }
 }
 
