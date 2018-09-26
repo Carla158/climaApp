@@ -11,7 +11,7 @@ module.exports = async function getLugar(direccion, apiKey) {
         const location = resp.data.results[0];
         const coors = location.geometry.location;
         return {
-            err: null,
+            err: '',
             direccion: location.formatted_address,
             lat: coors.lat,
             lng: coors.lng
