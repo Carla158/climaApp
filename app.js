@@ -21,7 +21,7 @@ const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
  * @param {string} apiKeyOpenWeat
  * @returns
  */
-async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
+async function comenzar(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 
     const coordenadas = await obtenerLugar(direccion, apiKeyGoogle);
     const clima = await obtenerClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
@@ -39,4 +39,4 @@ async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
     log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temperatura}°C\n Presion: ${clima.presion}\n Humedad: ${clima.humedad}`);
 }
 
-getInfo(argv.direccion, API_KEY_GOOGLE_MAP, API_KEY_OPEN_WEATHERMAP);
+comenzar(argv.direccion, API_KEY_GOOGLE_MAP, API_KEY_OPEN_WEATHERMAP);
