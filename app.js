@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-const getLugarLatLng = require('./src/lugar');
+const getLugar = require('./src/lugar');
 const getClima = require('./src/clima');
 const log = require('./src/log');
 
@@ -19,7 +19,7 @@ const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
  */
 async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 
-  const coordenadas = await getLugarLatLng(direccion, apiKeyGoogle);
+  const coordenadas = await getLugar(direccion, apiKeyGoogle);
   const clima = await getClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
 
   if (coordenadas.err) {
