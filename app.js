@@ -26,13 +26,13 @@ async function comenzar(direccion, apiKeyGoogle, apiKeyOpenWeat) {
     const coordenadas = await obtenerLugar(direccion, apiKeyGoogle);
     const clima = await obtenerClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
 
-    if (coordenadas.err) {
-        log(coordenadas.err);
+    if (coordenadas.err.error) {
+        log(coordenadas.err.mensaje);
         return;
     }
 
-    if (clima.err) {
-        log(clima.err);
+    if (clima.err.error) {
+        log(clima.err.mensaje);
         return;
     }
 

@@ -1,5 +1,4 @@
 const axios = require('axios');
-const log = require('./log');
 
 /**
  * Obtengo los datos del clima.
@@ -12,7 +11,10 @@ const log = require('./log');
  */
 module.exports = async function obtenerClima(direccion, apiKey, lat, lng) {
     const ret = {
-        err: '',
+        err: {
+            error: null,
+            mensaje: ''
+        },
         temperatura: 0.0,
         presion: 0.0,
         humedad: 0.0
@@ -29,9 +31,9 @@ module.exports = async function obtenerClima(direccion, apiKey, lat, lng) {
         return ret;
 
     } catch (error) {
-        // Menejo el error y envio un mensaje personalizado.
-        log(null, error);
-        ret.err = `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`;
+
+        ret.err.error = error;
+        ret.err.mensaje = `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`;
         return ret;
     }
 }
