@@ -27,16 +27,18 @@ async function comenzar(direccion, apiKeyGoogle, apiKeyOpenWeat) {
     const clima = await obtenerClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
 
     if (coordenadas.err.error) {
-        log(coordenadas.err.mensaje);
+        // log.logError(null, coordenadas.err.error);
+        log.log(coordenadas.err.mensaje);
         return;
     }
 
     if (clima.err.error) {
-        log(clima.err.mensaje);
+        // log.logError(null, clima.err.error);
+        log.log(clima.err.mensaje);
         return;
     }
 
-    log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temperatura}°C\n Presion: ${clima.presion}\n Humedad: ${clima.humedad}`);
+    log.log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temperatura}°C\n Presion: ${clima.presion}\n Humedad: ${clima.humedad}`);
 }
 
 comenzar(argv.direccion, API_KEY_GOOGLE_MAP, API_KEY_OPEN_WEATHERMAP);
