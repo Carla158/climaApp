@@ -19,7 +19,8 @@ module.exports = async function getClima(direccion, apiKey, lat, lng) {
     };
     try {
 
-        const resp = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`)
+        const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`;
+        const resp = await axios.get(url);
         const data = resp.data.main;
 
         ret.temp = data.temp;

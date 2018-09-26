@@ -17,7 +17,8 @@ module.exports = async function getLugar(direccion, apiKey) {
     };
     try {
 
-        const resp = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${direccion}+CA&key=${apiKey}`);
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${direccion}+CA&key=${apiKey}`;
+        const resp = await axios.get(url);
         const location = resp.data.results[0];
         const coors = location.geometry.location;
 
