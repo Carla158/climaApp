@@ -4,6 +4,11 @@ const log = require('./log');
 /**
  * Obtengo los datos del clima.
  * Mediante la API REST de Open Weathermap.
+ * @param {string} direccion
+ * @param {string} apiKey
+ * @param {number} lat
+ * @param {number} lng
+ * @returns
  */
 module.exports = async function getClima(direccion, apiKey, lat, lng) {
     const ret = {

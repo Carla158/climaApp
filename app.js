@@ -16,6 +16,10 @@ const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
 /**
  * Envio las consultas a cada servicio, para obtener los datos del clima.
  * Para finalmente, mostrarlos de forma ordenada por pantalla.
+ * @param {string} direccion
+ * @param {string} apiKeyGoogle
+ * @param {string} apiKeyOpenWeat
+ * @returns
  */
 async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 

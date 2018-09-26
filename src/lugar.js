@@ -4,6 +4,9 @@ const log = require('./log');
 /**
  * Obtengo las coordenadas de la ubicación que ingreso el usuario.
  * Mediante la API REST de Google Maps.
+ * @param {string} direccion
+ * @param {string} apiKey
+ * @returns
  */
 module.exports = async function getLugar(direccion, apiKey) {
     const ret = {
