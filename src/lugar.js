@@ -32,7 +32,7 @@ module.exports = async function obtenerLugar(direccion, apiKey) {
     } catch (error) {
 
         ret.err.error = error;
-        ret.err.mensaje = `Ocurrieron problemas al intentar obtener las coordenadas de la ciudad ${direccion}.`;
+        ret.err.mensaje = `Ocurrieron problemas al intentar obtener los datos de geolocalización de ${direccion}.`;
         return ret;
     }
 }
