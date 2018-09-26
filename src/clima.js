@@ -19,7 +19,7 @@ module.exports = async function getClima(direccion, apiKey, lat, lng) {
     // Menejo el error y envio un mensaje personalizado.
     log(null, error);
     return {
-      err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`,
+      err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`
     };
   }
 }

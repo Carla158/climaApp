@@ -19,20 +19,20 @@ const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
  */
 async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 
-  const coordinates = await getLugarLatLng(direccion, apiKeyGoogle);
-  const climInfo = await getClima(direccion, apiKeyOpenWeat, coordinates.lat, coordinates.lng);
+  const coordenadas = await getLugarLatLng(direccion, apiKeyGoogle);
+  const clima = await getClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
 
-  if (coordinates.err) {
-    log(coordinates.err);
+  if (coordenadas.err) {
+    log(coordenadas.err);
     return;
   }
 
-  if (climInfo.err) {
-    log(climInfo.err);
+  if (clima.err) {
+    log(clima.err);
     return;
   };
 
-  log(` \n El Clima en ${coordinates.direccion}.\n Temperatura: ${climInfo.temp}°C\n Presion: ${climInfo.pressure}\n Humedad: ${climInfo.humidity}`);
+  log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temp}°C\n Presion: ${clima.pressure}\n Humedad: ${clima.humidity}`);
 }
 
 getInfo(argv.direccion, API_KEY_GOOGLE_MAP, API_KEY_OPEN_WEATHERMAP);
