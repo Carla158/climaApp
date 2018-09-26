@@ -8,7 +8,7 @@ const log = require('./log');
  * @param {string} apiKey
  * @returns
  */
-module.exports = async function getLugar(direccion, apiKey) {
+module.exports = async function obtenerLugar(direccion, apiKey) {
     const ret = {
         err: '',
         direccion: '',
@@ -19,12 +19,12 @@ module.exports = async function getLugar(direccion, apiKey) {
 
         const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${direccion}+CA&key=${apiKey}`;
         const resp = await axios.get(url);
-        const location = resp.data.results[0];
-        const coors = location.geometry.location;
+        const data = resp.data.results[0];
+        const coord = data.geometry.location;
 
-        ret.direccion = location.formatted_address;
-        ret.lat = coors.lat;
-        ret.lng = coors.lng;
+        ret.direccion = data.formatted_address;
+        ret.lat = coord.lat;
+        ret.lng = coord.lng;
         return ret;
 
     } catch (error) {

@@ -1,13 +1,13 @@
 /**
  * Manejo los mensajes que se muestran en pantalla.
- * @param {string} message
+ * @param {string} mensaje
  * @param {Error} err
  * @returns
  */
-module.exports = function log(message, err) {
+module.exports = function log(mensaje, err) {
     if (err) {
         // console.log(err);
         return;
     }
-    console.log(message);
+    console.log(mensaje);
 }

@@ -10,12 +10,12 @@ const log = require('./log');
  * @param {number} lng
  * @returns
  */
-module.exports = async function getClima(direccion, apiKey, lat, lng) {
+module.exports = async function obtenerClima(direccion, apiKey, lat, lng) {
     const ret = {
         err: '',
-        temp: 0.0,
-        pressure: 0.0,
-        humidity: 0.0
+        temperatura: 0.0,
+        presion: 0.0,
+        humedad: 0.0
     };
     try {
 
@@ -23,9 +23,9 @@ module.exports = async function getClima(direccion, apiKey, lat, lng) {
         const resp = await axios.get(url);
         const data = resp.data.main;
 
-        ret.temp = data.temp;
-        ret.pressure = data.pressure;
-        ret.humidity = data.humidity;
+        ret.temperatura = data.temp;
+        ret.presion = data.pressure;
+        ret.humedad = data.humidity;
         return ret;
 
     } catch (error) {
