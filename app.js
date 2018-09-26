@@ -34,7 +34,7 @@ async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
     if (clima.err) {
         log(clima.err);
         return;
-    };
+    }
 
     log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temp}°C\n Presion: ${clima.pressure}\n Humedad: ${clima.humidity}`);
 }
