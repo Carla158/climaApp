@@ -4,11 +4,11 @@ const getClima = require('./src/clima');
 const log = require('./src/log');
 
 const argv = yargs
-  .usage('Uso: $0 <comando> [opción]')
-  .command('d', 'Nombre de la localidad y provicia')
-  .example('node $0 -d "concordia entre rios"')
-  .alias('d', 'direccion')
-  .demandOption('d').argv;
+    .usage('Uso: $0 <comando> [opción]')
+    .command('d', 'Nombre de la localidad y provicia')
+    .example('node $0 -d "concordia entre rios"')
+    .alias('d', 'direccion')
+    .demandOption('d').argv;
 
 const API_KEY_GOOGLE_MAP = 'AIzaSyAJ2aEs0UpGAW-G4mleFU6nasD6U1RkfT0';
 const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
@@ -19,20 +19,20 @@ const API_KEY_OPEN_WEATHERMAP = '1807420852ff52c5bd867004d74f398d';
  */
 async function getInfo(direccion, apiKeyGoogle, apiKeyOpenWeat) {
 
-  const coordenadas = await getLugar(direccion, apiKeyGoogle);
-  const clima = await getClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
+    const coordenadas = await getLugar(direccion, apiKeyGoogle);
+    const clima = await getClima(direccion, apiKeyOpenWeat, coordenadas.lat, coordenadas.lng);
 
-  if (coordenadas.err) {
-    log(coordenadas.err);
-    return;
-  }
+    if (coordenadas.err) {
+        log(coordenadas.err);
+        return;
+    }
 
-  if (clima.err) {
-    log(clima.err);
-    return;
-  };
+    if (clima.err) {
+        log(clima.err);
+        return;
+    };
 
-  log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temp}°C\n Presion: ${clima.pressure}\n Humedad: ${clima.humidity}`);
+    log(` \n El Clima en ${coordenadas.direccion}.\n Temperatura: ${clima.temp}°C\n Presion: ${clima.pressure}\n Humedad: ${clima.humidity}`);
 }
 
 getInfo(argv.direccion, API_KEY_GOOGLE_MAP, API_KEY_OPEN_WEATHERMAP);

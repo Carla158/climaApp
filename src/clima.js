@@ -6,20 +6,25 @@ const log = require('./log');
  * Mediante la API REST de Open Weathermap.
  */
 module.exports = async function getClima(direccion, apiKey, lat, lng) {
-  try {
-    const resp = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`)
-    const data = resp.data.main;
-    return {
-      err: '',
-      temp: data.temp,
-      pressure: data.pressure,
-      humidity: data.humidity
+    const ret = {
+        err: '',
+        temp: 0.0,
+        pressure: 0.0,
+        humidity: 0.0
     };
-  } catch (error) {
-    // Menejo el error y envio un mensaje personalizado.
-    log(null, error);
-    return {
-      err: `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`
-    };
-  }
+    try {
+
+        const resp = await axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=${apiKey}`)
+        const data = resp.data.main;
+        ret.temp = data.temp;
+        ret.pressure = data.pressure;
+        ret.humidity = data.humidity;
+        return ret;
+
+    } catch (error) {
+        // Menejo el error y envio un mensaje personalizado.
+        log(null, error);
+        ret.err = `Ocurrieron problemas al intentar obtener el clima de la ciudad ${direccion}.`;
+        return ret;
+    }
 }
